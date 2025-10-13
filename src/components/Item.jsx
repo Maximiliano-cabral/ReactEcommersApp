@@ -1,12 +1,18 @@
-export default function Item (props) {
+import ItemCount from "./ItemCount";
+import { Link } from "react-router";
+
+function Item(props) {
     return (
         <div className="Productos">
-        <img  width="200px" src= {props.img} alt="zapatillas" />
-        <h3>{props.title}</h3>
-        <p> precio: {props.price}</p>
-        <button>Ver mas detalle</button>
+            <img width="200px" src={props.img} alt={props.title} />
+            <h3>{props.title}</h3>
+            <p>Precio: ${props.price}</p>
+            <Link to={`/detalle/${props.id}`}>
+                <button>Ver más detalle</button>
+            </Link>
+            <ItemCount />  
         </div>
     )
 }
 
-
+export default Item;
