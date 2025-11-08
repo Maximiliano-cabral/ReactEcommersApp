@@ -1,4 +1,4 @@
-import CarWidget from "./CartWidget";
+import CarWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router";
 
 function NavBar () {

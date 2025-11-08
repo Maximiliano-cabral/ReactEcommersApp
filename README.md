@@ -1,12 +1,82 @@
-# React + Vite
+# 🛒 E-commerce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Descripción
+Plataforma de comercio electrónico moderna y escalable construida con React. Este proyecto permite a los usuarios navegar productos, gestionar carritos de compras.
 
-Currently, two official plugins are available:
+## ✨ Características Principales
+- **Catálogo de Productos**: Búsqueda, filtrado y categorización de productos
+- **Carrito de Compras**: Gestión dinámica de productos y cantidades
+- **Responsive Design**: Interfaz adaptable a todos los dispositivos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💻 Tecnologías Utilizadas
+- **Frontend**: React
+- **Estado**: Context Carrito / React Hooks
+- **Routing**: React Router
+- **UI Library**: Chakra UI
 
-## Expanding the ESLint configuration
+## 🗄️ Backend & Base de Datos
+- **Firebase**: Cloud Firestore (NoSQL)
+- **Colección**: products
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Configuración del Proyecto
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/Maximiliano-cabral/ReactEcommers.git
+cd ReactEcommers
+```
+
+### 2. Instalar dependencias
+```bash
+npm install
+```
+
+### 3. Iniciar el proyecto
+```bash
+npm start
+```
+
+El proyecto se abrirá en `http://localhost:3000`
+
+## 🏗️ Estructura del Proyecto
+```
+ReactEcommers/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── CartWidget/
+│   │   │   ├── CartWidget.jsx
+│   │   │   └── CartWidget.css
+│   │   ├── Item/
+│   │   │   ├── Item.jsx
+│   │   │   └── Item.css
+│   │   ├── ItemCount/
+│   │   │   ├── ItemCount.jsx
+│   │   │   └── ItemCount.css
+│   │   ├── ItemDetailContainer/
+│   │   │   └── ItemDetailContainer.jsx
+│   │   ├── ItemList/
+│   │   │   ├── ItemList.jsx
+│   │   │   ├── ItemList.css
+│   │   │   └── ItemListContainer.jsx
+│   │   └── NavBar/
+│   │       ├── NavBar.jsx
+│   │       └── NavBar.css
+│   ├── context/
+│   │   └── CartContext.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+├── public/
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+└── vite.config.js
+```
+
+## 👥 Autor
+**Maximiliano Cabral** - [GitHub](https://github.com/Maximiliano-cabral)

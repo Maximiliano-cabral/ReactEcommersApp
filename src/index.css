@@ -1,14 +1,29 @@
+/* 1. Import0 las fuentes al principio */
+@import url('https://fonts.googleapis.com/css2?family=...');
+
+/* 2. Defino las variables globales en :root */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family-main: 'Inter', system-ui, sans-serif;
+
+  /* Otras variables de color, etc. */
+  --color-text: rgba(255, 255, 255, 0.70);
+  --color-bg: #1d1d1de3;
+  --bg-gradient: linear-gradient(90deg, #3b6156, #0d4338, #3b6156);
+
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #1d1d1de3;
-
+  color: var(--color-text);
+  background-color: var(--color-bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* 3. Aplico la variable al body  */
+body {
+  font-family: var(--font-family-main);
+  background: var(--bg-gradient);
+}
+

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import ItemCount from "./ItemCount";
+import ItemCount from "../ItemCount/ItemCount";
 import { useParams } from "react-router";
-import { getProductById } from "../data/mockAPIService";
+import { getProductById } from "../../data/mockAPIService";
 
 function ItemDetailContainer (){
     const [itemData, setItemData] = useState ({loader:true});
@@ -17,8 +17,8 @@ function ItemDetailContainer (){
                     <img src={itemData.img} alt="" />
                     <h3>{itemData.title}</h3>
                     <p>Precio: $ {itemData.price}</p>
-                    <ItemCount />
-                </div>
+                    <ItemCount  product={itemData} />
+                </div> 
             }
         </div>
     )

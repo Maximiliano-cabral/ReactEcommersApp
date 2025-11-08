@@ -1,18 +1,20 @@
 // imports
 import './App.css'
-import './components/Item.css'
-import './components/ItemList.css'
-import './components/NavBar.css';
-import  './components/ItemCount.css';
-import ItemListContainer from './components/ItemListContainer'
-import NavBar from './components/NavBar'
+import './components/Item/Item.css'
+import './components/ItemList/ItemList.css'
+import './components/NavBar/NavBar.css';
+import  './components/ItemCount/ItemCount.css';
+import ItemListContainer from './components/ItemList/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import NavBar from './components/NavBar/NavBar'
 import { BrowserRouter, Routes, Route  } from 'react-router';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import Item from './components/Item/Item';
+import { CartContextProvider } from './context/CartContext';
 
 function App() {
-
   return (
     <BrowserRouter>
+    <CartContextProvider>
       <NavBar />
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
@@ -20,8 +22,10 @@ function App() {
         <Route path="/category/:catParam" element={<ItemListContainer greeting="Categorias..." />}/>
         <Route path="*" element={<div><h1>Error 404: no encontramos resultados</h1></div>}/>
       </Routes>
+      </CartContextProvider>
     </BrowserRouter>
   )
 }
+
 
 export default App

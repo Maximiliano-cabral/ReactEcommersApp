@@ -1,7 +1,7 @@
-import Item from "./Item"
-import ItemCount from "./ItemCount";
-import productosZapas from '../data/data.js';
-import getData, { getProductsByCategory } from "../data/mockAPIService";
+import Item from "../Item/Item.jsx"
+import ItemCount from "../ItemCount/ItemCount.jsx";
+import productosZapas from '../../data/data.js';
+import getData, { getProductsByCategory } from "../../data/mockAPIService.js";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 
