@@ -1,7 +1,8 @@
 import Item from "../Item/Item.jsx"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import getData, {getProductsByCategory} from '../../data/FirestoreService.js' 
+import getData, {getProductsByCategory} from '../../data/FirestoreService.js';
+import '../ItemList/ItemList.css'
 
 function ItemListContainer (props) {
     const [productos, setProductos] = useState ([]);
