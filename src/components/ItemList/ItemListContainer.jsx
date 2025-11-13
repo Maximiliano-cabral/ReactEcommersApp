@@ -6,7 +6,6 @@ import getData, {getProductsByCategory} from '../../data/FirestoreService.js'
 function ItemListContainer (props) {
     const [productos, setProductos] = useState ([]);
     const {catParam} = useParams ();
-    // GETDATA ESTA SIMULANDO UN FETCH 
       useEffect(() => {
         if (catParam ){
           getProductsByCategory (catParam).then ((data)=>setProductos (data))
@@ -22,14 +21,16 @@ function ItemListContainer (props) {
     }
   }, [catParam]);
     return (
-        <div className="ItemList">
-        <h1>Productos</h1>
+        <div className="item-list-container">
+        <h1 className="item-list-title">Productos</h1>
+        <div className="item-list-grid">
         {
             productos.map (item => <Item 
               key={item.id}
               {...item} />  
             )
         } 
+        </div>
         </div>
     )
 }

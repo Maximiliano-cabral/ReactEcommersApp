@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 
@@ -11,31 +12,39 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 10px;
 }
 
 .counter-controls button {
-  padding: 8px 16px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   cursor: pointer;
   background: #f0f0f0;
   color: #000;
   border: none;
-  border-radius: 6px;
+  border-radius: 50%;
+  font-size: 20px;
   font-weight: 500;
+  line-height: 1;
   transition: all 0.2s ease;
 }
 
-.counter-controls button:hover {
-  background: #a8e6cf; 
-  color: #000;
+.counter-controls button:hover:not(:disabled) {
+  background: #a8e6cf;
 }
+
+.counter-controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 
 .counter-controls p {
   margin: 0;
   font-size: 18px;
   min-width: 30px;
   text-align: center;
-  color: #000;
+  user-select: none;
 }
 
 
@@ -47,30 +56,34 @@
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
+  font-size: 1rem;
   transition: all 0.2s ease;
 }
 
 .btn:hover {
-  background: #a8e6cf; 
-  color: #000;
+  background: #a8e6cf;
+}
+
+
+.no-stock {
+  color: #ff4d4f;
+  font-weight: 600;
+  margin: 0;
 }
 
 
 @media (max-width: 480px) {
   .itemcount {
-    gap: 10px;
-  }
-  .counter-controls {
-    gap: 8px;
-    margin-top: 8px;
+    gap: 12px;
   }
   .counter-controls button {
-    padding: 6px 12px;
-    font-size: 0.9rem;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
   }
   .counter-controls p {
     font-size: 16px;
-    min-width: 25px;
+    min-width: 26px;
   }
   .btn {
     padding: 8px 16px;
