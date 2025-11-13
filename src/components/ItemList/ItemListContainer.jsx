@@ -1,10 +1,7 @@
 import Item from "../Item/Item.jsx"
-import ItemCount from "../ItemCount/ItemCount.jsx";
-import productosZapas from '../../data/data.js';
-import getData, { getProductsByCategory } from "../../data/mockAPIService.js";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-
+import getData, {getProductsByCategory} from '../../data/FirestoreService.js' 
 
 function ItemListContainer (props) {
     const [productos, setProductos] = useState ([]);
@@ -30,7 +27,7 @@ function ItemListContainer (props) {
         {
             productos.map (item => <Item 
               key={item.id}
-              {...item} /> 
+              {...item} />  
             )
         } 
         </div>

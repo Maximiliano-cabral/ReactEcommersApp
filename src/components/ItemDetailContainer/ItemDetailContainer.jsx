@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { useParams } from "react-router";
-import { getProductById } from "../../data/mockAPIService";
+import { getProductById } from "../../data/FirestoreService";
+
 
 function ItemDetailContainer (){
     const [itemData, setItemData] = useState ({loader:true});
-    const {id} = useParams();
+    const {idParam} = useParams();
     useEffect (()=> {
-        getProductById (id).then (res => setItemData (res));
+        getProductById (idParam).then (res => setItemData (res));
     },[]);
     return (
         <div>

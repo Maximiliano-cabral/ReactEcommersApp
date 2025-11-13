@@ -1,5 +1,5 @@
-import ItemCount from "../ItemCount/ItemCount";
-import { Link } from "react-router";
+
+import { Link } from "react-router";   
 
 function Item(props) {
     return (
@@ -10,7 +10,6 @@ function Item(props) {
             <Link to={`/detalle/${props.id}`}>
                 <button>Ver más detalle</button>
             </Link>
-            <ItemCount />  
         </div>
     )
 }
