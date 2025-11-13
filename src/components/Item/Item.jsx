@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import '../item/item.css'
+import '../Item/Item.css'
 
 function Item(props) {
   return (
