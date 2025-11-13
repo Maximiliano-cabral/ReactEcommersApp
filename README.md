@@ -6,17 +6,19 @@ Plataforma de comercio electrónico moderna y escalable construida con React. Es
 ## ✨ Características Principales
 - **Catálogo de Productos**: Búsqueda, filtrado y categorización de productos
 - **Carrito de Compras**: Gestión dinámica de productos y cantidades
+- **Proceso de Compra**: Formulario de datos y generación de órdenes
 - **Responsive Design**: Interfaz adaptable a todos los dispositivos
 
 ## 💻 Tecnologías Utilizadas
-- **Frontend**: React
-- **Estado**: Context Carrito / React Hooks
+- **Frontend**: React + Vite
+- **Estado**: Context API / React Hooks
 - **Routing**: React Router
-- **UI Library**: Chakra UI
+- **Estilos**: CSS puro con variables y diseño responsivo
+
 
 ## 🗄️ Backend & Base de Datos
 - **Firebase**: Cloud Firestore (NoSQL)
-- **Colección**: products
+- **Colecciones**: `products`, `orders`
 
 ## 📦 Configuración del Proyecto
 
@@ -36,7 +38,7 @@ npm install
 npm start
 ```
 
-El proyecto se abrirá en `http://localhost:3000`
+El proyecto se abrirá en `http://localhost:5173`
 
 ## 🏗️ Estructura del Proyecto
 ```
@@ -44,9 +46,15 @@ ReactEcommers/
 ├── src/
 │   ├── assets/
 │   ├── components/
+│   │   ├── CartContainer/
+│   │   │   ├── CartContainer.jsx
+│   │   │   └── CartContainer.css
 │   │   ├── CartWidget/
 │   │   │   ├── CartWidget.jsx
 │   │   │   └── CartWidget.css
+│   │   ├── CheckoutForm/
+│   │   │   ├── CheckoutForm.jsx
+│   │   │   └── CheckoutForm.css
 │   │   ├── Item/
 │   │   │   ├── Item.jsx
 │   │   │   └── Item.css
@@ -54,21 +62,28 @@ ReactEcommers/
 │   │   │   ├── ItemCount.jsx
 │   │   │   └── ItemCount.css
 │   │   ├── ItemDetailContainer/
-│   │   │   └── ItemDetailContainer.jsx
+│   │   │   ├── ItemDetailContainer.jsx
+│   │   │   └── ItemDetailContainer.css
 │   │   ├── ItemList/
 │   │   │   ├── ItemList.jsx
 │   │   │   ├── ItemList.css
 │   │   │   └── ItemListContainer.jsx
-│   │   └── NavBar/
-│   │       ├── NavBar.jsx
-│   │       └── NavBar.css
+│   │   ├── NavBar/
+│   │   │   ├── NavBar.jsx
+│   │   │   └── NavBar.css
+│   │   └── ItemCount/
+│   │       ├── ItemCount.jsx
+│   │       └── ItemCount.css
 │   ├── context/
 │   │   └── CartContext.jsx
+│   ├── data/
+│   │   └── FirestoreService.js
 │   ├── App.jsx
 │   ├── App.css
 │   ├── index.css
 │   └── main.jsx
 ├── public/
+├── .env
 ├── .gitignore
 ├── eslint.config.js
 ├── index.html

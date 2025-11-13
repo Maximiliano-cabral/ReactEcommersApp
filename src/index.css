@@ -1,29 +1,79 @@
-/* 1. Import0 las fuentes al principio */
-@import url('https://fonts.googleapis.com/css2?family=...');
 
-/* 2. Defino las variables globales en :root */
 :root {
-  --font-family-main: 'Inter', system-ui, sans-serif;
+  --bg-primary: #dad8d8e1;
+  --bg-secondary: #fafafa;
+  --text-color: #000000;
+  --btn-bg: #f0f0f0;
+  --btn-pastel: #a8e6cf; 
+  --radius: 8px;
+  --transition: all 0.2s ease;
+}
 
-  /* Otras variables de color, etc. */
-  --color-text: rgba(255, 255, 255, 0.70);
-  --color-bg: #1d1d1de3;
-  --bg-gradient: linear-gradient(90deg, #3b6156, #0d4338, #3b6156);
 
-  line-height: 1.5;
-  font-weight: 400;
-  color-scheme: light dark;
-  color: var(--color-text);
-  background-color: var(--color-bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-color);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 3. Aplico la variable al body  */
-body {
-  font-family: var(--font-family-main);
-  background: var(--bg-gradient);
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: var(--transition);
 }
 
+a:hover {
+  opacity: 0.8;
+}
+
+
+button,
+input[type="submit"],
+input[type="button"] {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  background: var(--btn-bg);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background: var(--btn-pastel);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --btn-bg: #2a2a2a;
+    
+  }
+}

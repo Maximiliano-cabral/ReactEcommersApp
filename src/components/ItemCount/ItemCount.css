@@ -1,9 +1,11 @@
+
 .itemcount {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
 }
+
 
 .counter-controls {
   display: flex;
@@ -15,6 +17,17 @@
 .counter-controls button {
   padding: 8px 16px;
   cursor: pointer;
+  background: #f0f0f0;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.counter-controls button:hover {
+  background: #a8e6cf; 
+  color: #000;
 }
 
 .counter-controls p {
@@ -22,13 +35,45 @@
   font-size: 18px;
   min-width: 30px;
   text-align: center;
+  color: #000;
 }
 
+
 .btn {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #f0f0f0;
+  color: #000;
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: #a8e6cf; 
+  color: #000;
+}
+
+
+@media (max-width: 480px) {
+  .itemcount {
+    gap: 10px;
+  }
+  .counter-controls {
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .counter-controls button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+  .counter-controls p {
+    font-size: 16px;
+    min-width: 25px;
+  }
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
 }

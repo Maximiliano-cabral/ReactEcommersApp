@@ -68,7 +68,7 @@ function CartContainer() {
           ))}
 
           <div className="cart-total">
-            <strong>Total: ${totalPrice().toFixed(2)}</strong>
+            <strong>Sub total: ${totalPrice().toFixed(2)}</strong>
           </div>
           <hr />
           <div>
