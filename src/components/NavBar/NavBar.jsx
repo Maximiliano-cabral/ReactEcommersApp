@@ -1,19 +1,31 @@
-import { Link } from "react-router";
-import CartWidget from "../CartWidget/CartWidget";
+import { useState } from 'react';
+import { Link } from 'react-router';
+import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 
 function NavBar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className="navbar">
       <Link to="/" className="navbar__logo">
         Scorpion Calzados
       </Link>
 
-      <ul className="navbar__links">
-        <li><Link to="/category/Running">Running</Link></li>
-        <li><Link to="/category/Lifestyle">Lifestyle</Link></li>
-        <li><Link to="/category/Casual">Casual</Link></li>
-        <li><Link to="/detalle">Detalle</Link></li>
+      
+      <button
+        className="navbar__toggle"
+        aria-label="Abrir menú"
+        onClick={() => setOpen(!open)}
+      >
+        ☰
+      </button>
+
+      <ul className={`navbar__links ${open ? 'show' : ''}`}>
+        <li><Link to="/category/Running" onClick={() => setOpen(false)}>Running</Link></li>
+        <li><Link to="/category/Lifestyle" onClick={() => setOpen(false)}>Lifestyle</Link></li>
+        <li><Link to="/category/Casual" onClick={() => setOpen(false)}>Casual</Link></li>
+        <li><Link to="/detalle" onClick={() => setOpen(false)}>Detalle</Link></li>
       </ul>
 
       <div className="navbar__cart">
